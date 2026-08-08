@@ -27,6 +27,7 @@ export async function authenticate(req, res, next) {
     req.user = userRes.rows[0]
     next()
   } catch (error) {
+    console.error('Auth token verification error:', error.message)
     return res.status(401).json({ message: 'Invalid or expired token. Please sign in again.' })
   }
 }

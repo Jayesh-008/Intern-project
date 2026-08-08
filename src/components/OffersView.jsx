@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import ProductCard from './ProductCard'
-import { FiTag, FiPercent } from 'react-icons/fi'
+import { FiTag } from 'react-icons/fi'
 
 const offerCategories = [
   { name: 'Sunglasses', discount: 'Up to 60% OFF', category: 'Sunglasses' },

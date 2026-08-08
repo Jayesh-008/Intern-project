@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
-import { FiPlus, FiMinus, FiTrash2, FiPackage, FiBox, FiUsers, FiDollarSign, FiCheck, FiRefreshCw, FiMail, FiPhone, FiClock, FiMessageSquare } from 'react-icons/fi'
+import { FiPlus, FiMinus, FiTrash2, FiPackage, FiBox, FiUsers, FiDollarSign, FiRefreshCw, FiMail, FiPhone, FiClock, FiMessageSquare } from 'react-icons/fi'
 import api from '../api'
 
-export default function AdminPanel({ user, onLogout }) {
+export default function AdminPanel({ _user, onLogout }) {
   const [products, setProducts] = useState([])
   const [orders, setOrders] = useState([])
   const [users, setUsers] = useState([])
-  const [categories, setCategories] = useState([])
   const [contactMessages, setContactMessages] = useState([])
   const [readMessageIds, setReadMessageIds] = useState(() => {
     try { return new Set(JSON.parse(localStorage.getItem('ee-read-msgs') || '[]')) } catch { return new Set() }
@@ -39,14 +38,12 @@ export default function AdminPanel({ user, onLogout }) {
       api.get('/products?limit=300'),
       api.get('/orders'),
       api.get('/users'),
-      api.get('/categories'),
       api.get('/contact'),
     ])
-      .then(([productsRes, ordersRes, usersRes, categoriesRes, contactRes]) => {
+      .then(([productsRes, ordersRes, usersRes, contactRes]) => {
         setProducts(productsRes.data.products || productsRes.data || [])
         setOrders(Array.isArray(ordersRes.data) ? ordersRes.data : [])
         setUsers(Array.isArray(usersRes.data) ? usersRes.data : [])
-        setCategories(Array.isArray(categoriesRes.data) ? categoriesRes.data : [])
         setContactMessages(Array.isArray(contactRes.data) ? contactRes.data : [])
       })
       .catch(() => setErrorMsg('Unable to load admin store data.'))

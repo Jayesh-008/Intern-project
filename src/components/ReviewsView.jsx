@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FiStar, FiMessageSquare, FiUser, FiCheckCircle } from 'react-icons/fi'
+import { FiStar, FiMessageSquare, FiCheckCircle } from 'react-icons/fi'
 import api from '../api'
 
 export default function ReviewsView({ user, products = [], onOpenAuth, onReviewSubmitted }) {

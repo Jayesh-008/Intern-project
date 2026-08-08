@@ -1,6 +1,10 @@
 import axios from 'axios'
 
-const defaultUrl = import.meta.env.DEV ? 'http://localhost:5000/api' : '/api'
+const isNetlify = typeof window !== 'undefined' && (window.location.hostname.includes('netlify') || window.location.hostname.includes('netlify.app'))
+const defaultUrl = import.meta.env.DEV
+  ? 'http://localhost:5000/api'
+  : (isNetlify ? 'https://eagle-eye-backend-tld9.onrender.com/api' : '/api')
+
 const rawUrl = import.meta.env.VITE_API_URL || defaultUrl
 const baseWithProtocol = (rawUrl.startsWith('http') || rawUrl.startsWith('/')) ? rawUrl : `https://${rawUrl}`
 const API_BASE_URL = baseWithProtocol.endsWith('/api') ? baseWithProtocol : `${baseWithProtocol.replace(/\/$/, '')}/api`

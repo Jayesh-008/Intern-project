@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { FiCheckCircle, FiShield, FiStar, FiX } from 'react-icons/fi'
-import { motion } from 'framer-motion'
+import { FiCheckCircle, FiX } from 'react-icons/fi'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
@@ -149,8 +148,6 @@ function App() {
     })
   }, [activeFilter, priceRange, products, searchTerm])
 
-  const bestSellers = useMemo(() => products.filter((product) => product.badge === 'Best Seller' || product.badge === 'Limited' || product.badge === 'Special Offer').slice(0, 4), [products])
-  const newArrivals = useMemo(() => products.filter((product) => product.badge === 'New Arrival' || product.badge === 'New' || product.badge === 'Fresh').slice(0, 4), [products])
 
   async function handleAddToCart(product) {
     if (!user) {
