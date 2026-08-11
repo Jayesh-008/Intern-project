@@ -60,67 +60,67 @@ export default function ReviewsView({ user, products = [], onOpenAuth, onReviewS
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F8F8] pb-24 text-[#111111]">
+    <div className="min-h-screen bg-[#F8F8F8] pb-16 sm:pb-24 text-[#111111]">
       {/* Header Banner */}
-      <div className="relative min-h-[380px] pt-28 pb-20 text-white text-center px-4 overflow-hidden bg-cover bg-center flex flex-col justify-center items-center sm:min-h-[450px] sm:pt-36 sm:pb-28" style={{ backgroundImage: "url('https://www.shutterstock.com/image-photo/customer-review-good-rating-concept-260nw-2236198959.jpg')" }}>
+      <div className="relative min-h-[300px] pt-20 pb-14 text-white text-center px-4 overflow-hidden bg-cover bg-center flex flex-col justify-center items-center sm:min-h-[450px] sm:pt-36 sm:pb-28" style={{ backgroundImage: "url('https://www.shutterstock.com/image-photo/customer-review-good-rating-concept-260nw-2236198959.jpg')" }}>
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px]" />
         <div className="relative z-10 mx-auto max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/50 bg-black/40 px-4.5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] backdrop-blur-md">
+          <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-[#D4AF37]/50 bg-black/40 px-3.5 sm:px-4.5 py-1.5 sm:py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#D4AF37] backdrop-blur-md">
             <FiMessageSquare size={14} /> Verified Feedback
           </span>
-          <h1 className="mt-5 text-3xl font-extrabold sm:text-5xl lg:text-6xl tracking-tight text-white drop-shadow-md">Customer Reviews</h1>
-          <p className="mt-5 text-base sm:text-lg leading-8 text-white/90 drop-shadow">
+          <h1 className="mt-4 sm:mt-5 text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-md">Customer Reviews</h1>
+          <p className="mt-3 sm:mt-5 text-sm sm:text-lg leading-6 sm:leading-8 text-white/90 drop-shadow">
             Read real experiences shared by our valued customers. Honest ratings from verified purchases.
           </p>
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 grid gap-12 lg:grid-cols-[1fr_380px]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12 grid gap-8 sm:gap-12 lg:grid-cols-[1fr_380px]">
         {/* Reviews List */}
         <div>
           <div className="flex items-center justify-between border-b border-black/10 pb-4">
-            <h2 className="text-2xl font-bold">Published Reviews ({reviews.length})</h2>
+            <h2 className="text-xl sm:text-2xl font-bold">Published Reviews ({reviews.length})</h2>
           </div>
 
           {loading ? (
             <div className="py-12 text-center text-sm text-[#111111]/60">Loading customer reviews...</div>
           ) : reviews.length === 0 ? (
-            <div className="my-8 rounded-[32px] border border-dashed border-black/15 bg-white p-10 text-center shadow-sm">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#F8F8F8] text-[#D4AF37] mb-4">
-                <FiStar size={28} />
+            <div className="my-6 sm:my-8 rounded-[24px] sm:rounded-[32px] border border-dashed border-black/15 bg-white p-6 sm:p-10 text-center shadow-sm">
+              <div className="mx-auto flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[#F8F8F8] text-[#D4AF37] mb-3 sm:mb-4">
+                <FiStar size={26} className="sm:w-7 sm:h-7" />
               </div>
-              <h3 className="text-xl font-bold text-[#111111]">No customer reviews yet.</h3>
-              <p className="mt-2 text-sm text-[#111111]/70 max-w-md mx-auto">
+              <h3 className="text-lg sm:text-xl font-bold text-[#111111]">No customer reviews yet.</h3>
+              <p className="mt-2 text-xs sm:text-sm text-[#111111]/70 max-w-md mx-auto">
                 Be the first to share your experience with Eagle Eye frames and lenses!
               </p>
             </div>
           ) : (
             <div className="mt-6 space-y-4">
               {reviews.map((rev) => (
-                <div key={rev.id} className="rounded-[28px] border border-black/5 bg-white p-6 shadow-sm flex flex-col justify-between gap-4">
+                <div key={rev.id} className="rounded-[20px] sm:rounded-[28px] border border-black/5 bg-white p-4 sm:p-6 shadow-sm flex flex-col justify-between gap-4">
                   <div>
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <div className="flex items-center gap-2">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#111111] text-white font-bold text-sm">
+                      <div className="flex items-center gap-2.5 sm:gap-3">
+                        <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-[#111111] text-white font-bold text-xs sm:text-sm shrink-0">
                           {rev.userName ? rev.userName.charAt(0).toUpperCase() : 'C'}
                         </div>
                         <div>
-                          <p className="font-semibold text-sm text-[#111111]">{rev.userName || 'Verified Customer'}</p>
+                          <p className="font-semibold text-xs sm:text-sm text-[#111111]">{rev.userName || 'Verified Customer'}</p>
                           {rev.productName ? (
-                            <p className="text-xs text-[#111111]/50">Product: <span className="font-semibold">{rev.productName}</span></p>
+                            <p className="text-[11px] sm:text-xs text-[#111111]/50">Product: <span className="font-semibold">{rev.productName}</span></p>
                           ) : null}
                         </div>
                       </div>
-                      <div className="flex items-center gap-1 text-[#D4AF37]">
+                      <div className="flex items-center gap-0.5 text-[#D4AF37]">
                         {Array.from({ length: 5 }).map((_, i) => (
-                          <FiStar key={i} size={16} className={i < rev.rating ? 'fill-[#D4AF37]' : 'text-black/20'} />
+                          <FiStar key={i} size={14} className={`sm:w-4 sm:h-4 ${i < rev.rating ? 'fill-[#D4AF37]' : 'text-black/20'}`} />
                         ))}
                       </div>
                     </div>
-                    <p className="mt-4 text-sm leading-7 text-[#111111]/80">{rev.comment}</p>
+                    <p className="mt-3 sm:mt-4 text-xs sm:text-sm leading-5 sm:leading-7 text-[#111111]/80">{rev.comment}</p>
                   </div>
-                  <div className="flex items-center justify-between border-t border-black/5 pt-3 text-xs text-[#111111]/50">
+                  <div className="flex items-center justify-between border-t border-black/5 pt-2.5 sm:pt-3 text-[11px] sm:text-xs text-[#111111]/50">
                     <span className="flex items-center gap-1 text-emerald-600 font-medium">
                       <FiCheckCircle size={12} /> Verified Buyer
                     </span>
@@ -134,18 +134,18 @@ export default function ReviewsView({ user, products = [], onOpenAuth, onReviewS
 
         {/* Write a Review Box */}
         <div>
-          <div className="top-28 rounded-[32px] border border-black/10 bg-white p-6 shadow-xl lg:sticky">
-            <h3 className="text-xl font-bold text-[#111111]">Write a Review</h3>
+          <div className="top-28 rounded-[24px] sm:rounded-[32px] border border-black/10 bg-white p-5 sm:p-6 shadow-xl lg:sticky">
+            <h3 className="text-lg sm:text-xl font-bold text-[#111111]">Write a Review</h3>
             <p className="mt-1 text-xs leading-5 text-[#111111]/60">Share your rating and feedback with our community.</p>
 
             {user ? (
-              <form onSubmit={handleSubmitReview} className="mt-6 space-y-4">
+              <form onSubmit={handleSubmitReview} className="mt-5 sm:mt-6 space-y-3.5 sm:space-y-4">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-[#111111]/70 mb-1">Select Product</label>
                   <select
                     value={form.productId}
                     onChange={(e) => setForm({ ...form, productId: e.target.value })}
-                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] px-4 py-3 text-sm outline-none"
+                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] px-4 py-2.5 sm:py-3 text-xs sm:text-sm outline-none"
                     required
                   >
                     <option value="">-- Choose a product --</option>
@@ -162,7 +162,7 @@ export default function ReviewsView({ user, products = [], onOpenAuth, onReviewS
                   <select
                     value={form.rating}
                     onChange={(e) => setForm({ ...form, rating: Number(e.target.value) })}
-                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] px-4 py-3 text-sm outline-none"
+                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] px-4 py-2.5 sm:py-3 text-xs sm:text-sm outline-none"
                   >
                     <option value={5}>★★★★★ 5 Stars - Excellent</option>
                     <option value={4}>★★★★☆ 4 Stars - Very Good</option>
@@ -179,7 +179,7 @@ export default function ReviewsView({ user, products = [], onOpenAuth, onReviewS
                     value={form.comment}
                     onChange={(e) => setForm({ ...form, comment: e.target.value })}
                     placeholder="Describe frame comfort, build quality, shipping speed..."
-                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] p-4 text-sm outline-none resize-none"
+                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] p-3.5 sm:p-4 text-xs sm:text-sm outline-none resize-none"
                     required
                   />
                 </div>
@@ -190,17 +190,17 @@ export default function ReviewsView({ user, products = [], onOpenAuth, onReviewS
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full rounded-full bg-[#111111] py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#D4AF37] hover:text-[#111111]"
+                  className="w-full rounded-full bg-[#111111] py-3 sm:py-3.5 text-xs font-semibold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-white transition hover:bg-[#D4AF37] hover:text-[#111111]"
                 >
                   {submitting ? 'Submitting...' : 'Submit Review'}
                 </button>
               </form>
             ) : (
-              <div className="mt-6 rounded-2xl border border-dashed border-black/15 bg-[#F8F8F8] p-6 text-center">
-                <p className="text-sm text-[#111111]/70">Please log in to submit a review for your purchase.</p>
+              <div className="mt-5 sm:mt-6 rounded-2xl border border-dashed border-black/15 bg-[#F8F8F8] p-5 sm:p-6 text-center">
+                <p className="text-xs sm:text-sm text-[#111111]/70">Please log in to submit a review for your purchase.</p>
                 <button
                   onClick={onOpenAuth}
-                  className="mt-4 rounded-full bg-[#111111] px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#D4AF37] hover:text-[#111111]"
+                  className="mt-4 rounded-full bg-[#111111] px-5 sm:px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#D4AF37] hover:text-[#111111]"
                 >
                   Sign In
                 </button>

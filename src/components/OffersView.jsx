@@ -22,9 +22,9 @@ export default function OffersView({ products = [], wishlistItems = [], onAddToC
   const displayList = discountedProducts.length > 0 ? discountedProducts : products
 
   return (
-    <div id="offers" className="min-h-screen bg-[#F8F8F8] pb-24 text-[#111111]">
+    <div id="offers" className="min-h-screen bg-[#F8F8F8] pb-16 sm:pb-24 text-[#111111]">
       {/* Header Banner with /hero2.png background */}
-      <div className="relative overflow-hidden bg-black pt-24 pb-16 text-center text-white px-4 shadow-xl sm:pt-32 sm:pb-24">
+      <div className="relative overflow-hidden bg-black pt-20 pb-14 text-center text-white px-4 shadow-xl sm:pt-32 sm:pb-24">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/hero2.png')" }}
@@ -33,51 +33,51 @@ export default function OffersView({ products = [], wishlistItems = [], onAddToC
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.25),transparent_60%)]" />
 
         <div className="relative z-10 mx-auto max-w-4xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37] bg-[#D4AF37]/20 px-5 py-2 text-xs font-bold uppercase tracking-[0.3em] text-[#D4AF37] shadow-lg backdrop-blur">
-            <FiTag size={15} /> EXCLUSIVE PROMOTIONAL OFFERS
+          <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-[#D4AF37] bg-[#D4AF37]/20 px-3.5 sm:px-5 py-1.5 sm:py-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[#D4AF37] shadow-lg backdrop-blur">
+            <FiTag size={14} className="sm:w-[15px] sm:h-[15px]" /> EXCLUSIVE PROMOTIONAL OFFERS
           </span>
-          <h1 className="mt-5 text-3xl font-extrabold sm:text-5xl lg:text-6xl tracking-tight text-white drop-shadow-md">
+          <h1 className="mt-4 sm:mt-5 text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-md">
             Special Discounts & Deals
           </h1>
-          <p className="mt-5 text-lg leading-8 text-white/90 max-w-2xl mx-auto font-medium">
+          <p className="mt-3 sm:mt-5 text-sm sm:text-lg leading-6 sm:leading-8 text-white/90 max-w-2xl mx-auto font-medium">
             Explore curated luxury frames, sunglasses, and contact lenses with verified savings from <strong className="text-[#D4AF37] underline underline-offset-4 font-bold">39% to 60% OFF</strong>.
           </p>
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-10 relative z-20">
         {/* Promotional Category Cards Grid */}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-3.5 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {offerCategories.map((cat) => (
             <div
               key={cat.name}
-              className="rounded-[24px] bg-[#111111] p-5 text-white shadow-2xl border border-[#D4AF37]/30 flex flex-col justify-between transition hover:-translate-y-1.5 hover:border-[#D4AF37]"
+              className="rounded-[20px] sm:rounded-[24px] bg-[#111111] p-4 sm:p-5 text-white shadow-2xl border border-[#D4AF37]/30 flex flex-col justify-between transition hover:-translate-y-1.5 hover:border-[#D4AF37]"
             >
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">
+                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#D4AF37]">
                   PROMOTIONAL DEAL
                 </span>
-                <h3 className="mt-1.5 text-base sm:text-lg font-bold text-white tracking-wide">{cat.name}</h3>
+                <h3 className="mt-1 sm:mt-1.5 text-base sm:text-lg font-bold text-white tracking-wide">{cat.name}</h3>
               </div>
-              <div className="mt-4 flex items-center justify-between border-t border-white/15 pt-3">
-                <span className="text-xs font-semibold uppercase tracking-wider text-white/60">Savings</span>
-                <span className="text-base sm:text-lg font-extrabold text-[#D4AF37] tracking-tight">{cat.discount}</span>
+              <div className="mt-3.5 sm:mt-4 flex items-center justify-between border-t border-white/15 pt-2.5 sm:pt-3">
+                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/60">Savings</span>
+                <span className="text-sm sm:text-lg font-extrabold text-[#D4AF37] tracking-tight">{cat.discount}</span>
               </div>
             </div>
           ))}
         </div>
 
         {/* Discounted Products Grid */}
-        <div className="mt-20">
-          <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between border-b border-black/10 pb-6">
+        <div className="mt-12 sm:mt-20">
+          <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between border-b border-black/10 pb-5 sm:pb-6">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#D4AF37]">PROMOTIONAL CATALOG</p>
-              <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl text-[#111111]">Active Promotional Products</h2>
+              <h2 className="mt-1.5 sm:mt-2 text-2xl sm:text-4xl font-extrabold text-[#111111]">Active Promotional Products</h2>
             </div>
-            <p className="text-sm font-semibold text-[#111111]/70">Showing {displayList.length} item(s)</p>
+            <p className="text-xs sm:text-sm font-semibold text-[#111111]/70">Showing {displayList.length} item(s)</p>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-6 sm:mt-10 grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {displayList.map((product) => (
               <ProductCard
                 key={product.id}

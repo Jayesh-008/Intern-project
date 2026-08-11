@@ -54,11 +54,11 @@ export default function Navbar({
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all ${scrolled ? 'bg-black/95 backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.16)]' : 'bg-black/90 backdrop-blur-2xl'}`}>
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-3 sm:px-6 sm:py-4 lg:px-8">
         {/* Logo Branding */}
-        <button onClick={() => handleNavClick({ view: 'home', href: '#' })} className="flex items-center gap-3 text-left">
-          <img src="https://images.scalebranding.com/brave-eye-vision-logo-owl-eagle-logo-01KXCGHY1TG2XAJV5N1Z0H850F-full.png" alt="Eagle Eye logo" className="h-10 w-auto object-contain" />
-          <span className="hidden text-lg font-bold tracking-[0.35em] text-white uppercase sm:inline-block">EAGLE EYE</span>
+        <button onClick={() => handleNavClick({ view: 'home', href: '#' })} className="flex items-center gap-2 sm:gap-3 text-left shrink-0">
+          <img src="https://images.scalebranding.com/brave-eye-vision-logo-owl-eagle-logo-01KXCGHY1TG2XAJV5N1Z0H850F-full.png" alt="Eagle Eye logo" className="h-8 sm:h-10 w-auto object-contain" />
+          <span className="hidden text-base sm:text-lg font-bold tracking-[0.25em] sm:tracking-[0.35em] text-white uppercase sm:inline-block">EAGLE EYE</span>
         </button>
 
         {/* Customer Focused Main Nav Links */}
@@ -76,21 +76,21 @@ export default function Navbar({
         </div>
 
         {/* Right Action Icons: Search, Wishlist, Cart, Account */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
           {/* Search */}
-          <button onClick={onSearch} title="Search" className="rounded-full border border-white/15 bg-white/10 p-2.5 text-white shadow-sm transition hover:-translate-y-0.5 hover:border-[#D4AF37] hover:text-[#D4AF37]">
-            <FiSearch size={18} />
+          <button onClick={onSearch} title="Search" className="rounded-full border border-white/15 bg-white/10 p-2 sm:p-2.5 text-white shadow-sm transition hover:-translate-y-0.5 hover:border-[#D4AF37] hover:text-[#D4AF37]">
+            <FiSearch className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
           </button>
 
           {/* Wishlist */}
           <button
             onClick={() => handleNavClick({ view: 'dashboard', href: '#wishlist' })}
             title={`Wishlist (${wishlistCount})`}
-            className="relative rounded-full border border-white/15 bg-white/10 p-2.5 text-white shadow-sm transition hover:-translate-y-0.5 hover:border-[#D4AF37] hover:text-[#D4AF37]"
+            className="relative rounded-full border border-white/15 bg-white/10 p-2 sm:p-2.5 text-white shadow-sm transition hover:-translate-y-0.5 hover:border-[#D4AF37] hover:text-[#D4AF37]"
           >
-            <FiHeart size={18} />
+            <FiHeart className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
             {wishlistCount > 0 ? (
-              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white shadow">
+              <span className="absolute -right-1 -top-1 flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-red-500 text-[9px] sm:text-[10px] font-bold text-white shadow">
                 {wishlistCount}
               </span>
             ) : null}
@@ -100,11 +100,11 @@ export default function Navbar({
           <button
             onClick={onOpenCart}
             title={`Cart (${cartCount})`}
-            className="relative rounded-full border border-white/15 bg-white/10 p-2.5 text-white shadow-sm transition hover:-translate-y-0.5 hover:border-[#D4AF37] hover:text-[#D4AF37]"
+            className="relative rounded-full border border-white/15 bg-white/10 p-2 sm:p-2.5 text-white shadow-sm transition hover:-translate-y-0.5 hover:border-[#D4AF37] hover:text-[#D4AF37]"
           >
-            <FiShoppingBag size={18} />
+            <FiShoppingBag className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
             {cartCount > 0 ? (
-              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#D4AF37] text-[10px] font-bold text-[#111111] shadow">
+              <span className="absolute -right-1 -top-1 flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-[#D4AF37] text-[9px] sm:text-[10px] font-bold text-[#111111] shadow">
                 {cartCount}
               </span>
             ) : null}
@@ -115,16 +115,16 @@ export default function Navbar({
             {user ? (
               <button
                 onClick={() => setAccountMenuOpen((prev) => !prev)}
-                className="flex items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
+                className="flex items-center gap-1.5 sm:gap-2 rounded-full border border-[#D4AF37]/40 bg-white/10 px-2.5 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-white transition hover:bg-white/20"
               >
-                <FiUser size={16} className="text-[#D4AF37]" />
+                <FiUser className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#D4AF37]" />
                 <span className="hidden md:inline-block max-w-[100px] truncate">{user.name || 'Account'}</span>
                 <FiChevronDown size={14} className={`transition duration-200 ${accountMenuOpen ? 'rotate-180' : ''}`} />
               </button>
             ) : (
               <button
                 onClick={onOpenAuth}
-                className="rounded-full bg-[#D4AF37] px-4 py-2 text-sm font-semibold text-[#111111] transition hover:-translate-y-0.5 shadow-sm"
+                className="rounded-full bg-[#D4AF37] px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-[#111111] transition hover:-translate-y-0.5 shadow-sm whitespace-nowrap"
               >
                 Sign In
               </button>
@@ -186,15 +186,15 @@ export default function Navbar({
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button className="rounded-full border border-white/15 bg-white/10 p-2.5 text-white lg:hidden" onClick={() => setMobileOpen((value) => !value)}>
-            {mobileOpen ? <FiX size={18} /> : <FiMenu size={18} />}
+          <button className="rounded-full border border-white/15 bg-white/10 p-2 sm:p-2.5 text-white lg:hidden" onClick={() => setMobileOpen((value) => !value)}>
+            {mobileOpen ? <FiX className="h-4 w-4 sm:h-[18px] sm:w-[18px]" /> : <FiMenu className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />}
           </button>
         </div>
       </nav>
 
       {/* Mobile Drawer Menu */}
       {mobileOpen && (
-        <div className="border-t border-white/10 bg-black/95 px-4 py-6 shadow-2xl backdrop-blur lg:hidden">
+        <div className="max-h-[calc(100vh-64px)] overflow-y-auto border-t border-white/10 bg-black/95 px-4 py-6 shadow-2xl backdrop-blur lg:hidden">
           <div className="flex flex-col gap-4">
             {navItems.map((item) => (
               <button

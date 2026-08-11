@@ -155,25 +155,25 @@ export default function AdminPanel({ _user, onLogout }) {
 
   return (
     <div className="min-h-screen bg-[#F8F8F8] p-3 sm:p-4 md:p-6 text-[#111111]">
-      <div className="mx-auto max-w-7xl rounded-[36px] bg-white p-4 shadow-2xl sm:p-6">
+      <div className="mx-auto max-w-7xl rounded-[24px] sm:rounded-[36px] bg-white p-3.5 sm:p-6 shadow-2xl">
         {/* Admin Header */}
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-black/10 pb-6">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-b border-black/10 pb-5 sm:pb-6">
           <div>
-            <span className="rounded-full bg-[#D4AF37]/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.25em] text-[#D4AF37]">
+            <span className="rounded-full bg-[#D4AF37]/15 px-3 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#D4AF37]">
               ADMIN DASHBOARD
             </span>
-            <h2 className="mt-2 text-3xl font-extrabold text-[#111111]">Eagle Eye Control Hub</h2>
+            <h2 className="mt-1.5 sm:mt-2 text-2xl sm:text-3xl font-extrabold text-[#111111]">Eagle Eye Control Hub</h2>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               onClick={loadAdminData}
-              className="flex items-center gap-2 rounded-full border border-black/10 bg-[#F8F8F8] px-4 py-2.5 text-xs font-semibold text-[#111111] hover:border-[#D4AF37]"
+              className="flex items-center gap-2 rounded-full border border-black/10 bg-[#F8F8F8] px-3.5 sm:px-4 py-2 sm:py-2.5 text-xs font-semibold text-[#111111] hover:border-[#D4AF37]"
             >
               <FiRefreshCw size={14} /> Refresh Data
             </button>
             <button
               onClick={onLogout}
-              className="rounded-full bg-[#111111] px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white hover:bg-red-600"
+              className="rounded-full bg-[#111111] px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-semibold uppercase tracking-wider text-white hover:bg-red-600"
             >
               Logout
             </button>
@@ -182,105 +182,105 @@ export default function AdminPanel({ _user, onLogout }) {
 
         {/* Notifications */}
         {message ? (
-          <div className="mt-4 rounded-2xl bg-emerald-50 border border-emerald-200 p-4 text-xs font-semibold text-emerald-700">
+          <div className="mt-4 rounded-2xl bg-emerald-50 border border-emerald-200 p-3.5 sm:p-4 text-xs font-semibold text-emerald-700">
             ✅ {message}
           </div>
         ) : null}
         {errorMsg ? (
-          <div className="mt-4 rounded-2xl bg-red-50 border border-red-200 p-4 text-xs font-semibold text-red-700">
+          <div className="mt-4 rounded-2xl bg-red-50 border border-red-200 p-3.5 sm:p-4 text-xs font-semibold text-red-700">
             ⚠️ {errorMsg}
           </div>
         ) : null}
 
         {/* Stats Grid */}
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          <div className="rounded-[28px] border border-black/10 bg-[#F8F8F8] p-5">
+        <div className="mt-6 grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-5">
+          <div className="rounded-[20px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-5">
             <div className="flex items-center justify-between text-[#111111]/60">
-              <span className="text-xs uppercase tracking-[0.2em]">Total Products</span>
-              <FiBox size={18} />
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em]">Total Products</span>
+              <FiBox size={16} className="sm:w-4 sm:h-4" />
             </div>
-            <p className="mt-3 text-3xl font-bold">{stats.products}</p>
+            <p className="mt-2 sm:mt-3 text-2xl sm:text-3xl font-bold">{stats.products}</p>
             {stats.lowStock > 0 ? (
-              <p className="mt-1 text-xs font-semibold text-amber-600">⚠️ {stats.lowStock} item(s) low in stock</p>
+              <p className="mt-1 text-[10px] sm:text-xs font-semibold text-amber-600">⚠️ {stats.lowStock} item(s) low stock</p>
             ) : null}
           </div>
 
-          <div className="rounded-[28px] border border-black/10 bg-[#F8F8F8] p-5">
+          <div className="rounded-[20px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-5">
             <div className="flex items-center justify-between text-[#111111]/60">
-              <span className="text-xs uppercase tracking-[0.2em]">Total Orders</span>
-              <FiPackage size={18} />
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em]">Total Orders</span>
+              <FiPackage size={16} className="sm:w-4 sm:h-4" />
             </div>
-            <p className="mt-3 text-3xl font-bold">{stats.orders}</p>
+            <p className="mt-2 sm:mt-3 text-2xl sm:text-3xl font-bold">{stats.orders}</p>
           </div>
 
-          <div className="rounded-[28px] border border-black/10 bg-[#F8F8F8] p-5">
+          <div className="rounded-[20px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-5">
             <div className="flex items-center justify-between text-[#111111]/60">
-              <span className="text-xs uppercase tracking-[0.2em]">Registered Users</span>
-              <FiUsers size={18} />
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em]">Registered Users</span>
+              <FiUsers size={16} className="sm:w-4 sm:h-4" />
             </div>
-            <p className="mt-3 text-3xl font-bold">{stats.users}</p>
+            <p className="mt-2 sm:mt-3 text-2xl sm:text-3xl font-bold">{stats.users}</p>
           </div>
 
-          <div className="rounded-[28px] border border-black/10 bg-[#F8F8F8] p-5">
+          <div className="rounded-[20px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-5">
             <div className="flex items-center justify-between text-[#111111]/60">
-              <span className="text-xs uppercase tracking-[0.2em]">Total Revenue</span>
-              <FiDollarSign size={18} className="text-[#D4AF37]" />
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em]">Total Revenue</span>
+              <FiDollarSign size={16} className="text-[#D4AF37] sm:w-4 sm:h-4" />
             </div>
-            <p className="mt-3 text-3xl font-extrabold text-[#D4AF37]">₹{stats.revenue.toLocaleString('en-IN')}</p>
+            <p className="mt-2 sm:mt-3 text-xl sm:text-3xl font-extrabold text-[#D4AF37]">₹{stats.revenue.toLocaleString('en-IN')}</p>
           </div>
 
           <button
             onClick={() => { setActiveTab('messages'); contactMessages.forEach((m) => markAsRead(m.id)) }}
-            className="relative rounded-[28px] border border-black/10 bg-[#F8F8F8] p-5 text-left transition hover:border-[#D4AF37] hover:bg-[#D4AF37]/5"
+            className="relative rounded-[20px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-5 text-left transition hover:border-[#D4AF37] hover:bg-[#D4AF37]/5 col-span-2 sm:col-span-1"
           >
             <div className="flex items-center justify-between text-[#111111]/60">
-              <span className="text-xs uppercase tracking-[0.2em]">Messages</span>
-              <FiMessageSquare size={18} />
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em]">Messages</span>
+              <FiMessageSquare size={16} className="sm:w-4 sm:h-4" />
             </div>
-            <p className="mt-3 text-3xl font-bold">{contactMessages.length}</p>
+            <p className="mt-2 sm:mt-3 text-2xl sm:text-3xl font-bold">{contactMessages.length}</p>
             {unreadCount > 0 ? (
-              <p className="mt-1 text-xs font-semibold text-red-600">🔴 {unreadCount} unread</p>
+              <p className="mt-1 text-[10px] sm:text-xs font-semibold text-red-600">🔴 {unreadCount} unread</p>
             ) : (
-              <p className="mt-1 text-xs font-semibold text-emerald-600">All read ✓</p>
+              <p className="mt-1 text-[10px] sm:text-xs font-semibold text-emerald-600">All read ✓</p>
             )}
           </button>
         </div>
 
         {/* Tab Navigation */}
-        <div className="mt-8 flex flex-wrap border-b border-black/10 gap-2">
+        <div className="mt-6 sm:mt-8 flex flex-wrap border-b border-black/10 gap-1.5 sm:gap-2">
           <button
             onClick={() => setActiveTab('products')}
-            className={`px-6 py-3 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
+            className={`px-3 sm:px-6 py-2.5 sm:py-3 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition ${
               activeTab === 'products' ? 'border-[#D4AF37] text-[#111111]' : 'border-transparent text-[#111111]/60 hover:text-[#111111]'
             }`}
           >
-            Manage Products & Stock ({products.length})
+            Manage Products ({products.length})
           </button>
           <button
             onClick={() => setActiveTab('add')}
-            className={`px-6 py-3 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
+            className={`px-3 sm:px-6 py-2.5 sm:py-3 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition ${
               activeTab === 'add' ? 'border-[#D4AF37] text-[#111111]' : 'border-transparent text-[#111111]/60 hover:text-[#111111]'
             }`}
           >
-            + Add New Product
+            + Add Product
           </button>
           <button
             onClick={() => setActiveTab('orders')}
-            className={`px-6 py-3 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
+            className={`px-3 sm:px-6 py-2.5 sm:py-3 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition ${
               activeTab === 'orders' ? 'border-[#D4AF37] text-[#111111]' : 'border-transparent text-[#111111]/60 hover:text-[#111111]'
             }`}
           >
-            Orders & Status ({orders.length})
+            Orders ({orders.length})
           </button>
           <button
             onClick={() => { setActiveTab('messages'); contactMessages.forEach((m) => markAsRead(m.id)) }}
-            className={`relative px-6 py-3 text-xs font-bold uppercase tracking-wider border-b-2 transition ${
+            className={`relative px-3 sm:px-6 py-2.5 sm:py-3 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition ${
               activeTab === 'messages' ? 'border-[#D4AF37] text-[#111111]' : 'border-transparent text-[#111111]/60 hover:text-[#111111]'
             }`}
           >
-            Contact Messages
+            Messages
             {unreadCount > 0 ? (
-              <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-black text-white">
+              <span className="ml-1.5 inline-flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-red-500 text-[9px] sm:text-[10px] font-black text-white">
                 {unreadCount}
               </span>
             ) : null}
@@ -645,11 +645,11 @@ export default function AdminPanel({ _user, onLogout }) {
                       </div>
 
                       {/* Message Preview / Expanded */}
-                      <div className={`mt-3 pl-[52px] transition-all ${ isExpanded ? '' : '' }`}>
+                      <div className={`mt-2 sm:mt-3 sm:pl-[52px] transition-all ${ isExpanded ? '' : '' }`}>
                         {isExpanded ? (
-                          <div className="rounded-2xl border border-black/8 bg-[#F8F8F8] p-4">
-                            <p className="text-xs font-semibold uppercase tracking-wider text-[#111111]/50 mb-2">Message</p>
-                            <p className="text-sm leading-6 text-[#111111] whitespace-pre-wrap">{msg.message}</p>
+                          <div className="rounded-2xl border border-black/8 bg-[#F8F8F8] p-3.5 sm:p-4">
+                            <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#111111]/50 mb-1.5 sm:mb-2">Message</p>
+                            <p className="text-xs sm:text-sm leading-5 sm:leading-6 text-[#111111] whitespace-pre-wrap">{msg.message}</p>
                           </div>
                         ) : (
                           <p className="text-xs leading-5 text-[#111111]/60 line-clamp-2">{msg.message}</p>

@@ -92,20 +92,20 @@ export default function Dashboard({ user, onLogout, onGoHome }) {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F8F8] p-6 text-[#111111]">
-      <div className="mx-auto max-w-7xl rounded-[36px] bg-white p-6 shadow-2xl">
+    <div className="min-h-screen bg-[#F8F8F8] p-3 sm:p-6 text-[#111111]">
+      <div className="mx-auto max-w-7xl rounded-[24px] sm:rounded-[36px] bg-white p-4 sm:p-6 shadow-2xl">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#D4AF37]">Customer dashboard</p>
-            <h2 className="mt-2 text-3xl font-semibold">Hello, {user?.name || 'Guest'}</h2>
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#D4AF37]">Customer dashboard</p>
+            <h2 className="mt-1 sm:mt-2 text-2xl sm:text-3xl font-semibold">Hello, {user?.name || 'Guest'}</h2>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {onGoHome ? (
-              <button onClick={onGoHome} className="rounded-full border border-black/10 bg-[#F8F8F8] px-5 py-3 font-semibold text-[#111111] transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
+              <button onClick={onGoHome} className="rounded-full border border-black/10 bg-[#F8F8F8] px-3.5 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-[#111111] transition hover:border-[#D4AF37] hover:text-[#D4AF37]">
                 ← Back to Shop
               </button>
             ) : null}
-            <button onClick={onLogout} className="rounded-full bg-[#111111] px-5 py-3 font-semibold text-white">Logout</button>
+            <button onClick={onLogout} className="rounded-full bg-[#111111] px-4 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-white">Logout</button>
           </div>
         </div>
 
@@ -117,66 +117,66 @@ export default function Dashboard({ user, onLogout, onGoHome }) {
         ) : null}
 
         {error ? (
-          <div className="mt-6 rounded-[20px] border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700">
+          <div className="mt-6 rounded-[20px] border border-red-200 bg-red-50 px-4 sm:px-5 py-3.5 sm:py-4 text-xs sm:text-sm text-red-700">
             ⚠️ {error}
           </div>
         ) : null}
 
-        <div className="mt-4 rounded-[20px] border border-emerald-200 bg-emerald-50 px-5 py-3 text-sm text-emerald-800">
+        <div className="mt-4 rounded-[20px] border border-emerald-200 bg-emerald-50 px-4 sm:px-5 py-3 text-xs sm:text-sm text-emerald-800 leading-5">
           🟢 <strong>PostgreSQL Connected:</strong> Your cart, orders, wishlist, and account data are safely stored and persisted in PostgreSQL.
         </div>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-          <div className="rounded-[28px] border border-black/10 bg-[#F8F8F8] p-5">
-            <p className="text-sm uppercase tracking-[0.24em] text-[#111111]/60">Products</p>
-            <p className="mt-3 text-2xl font-semibold">{products.length}</p>
+        <div className="mt-6 sm:mt-8 grid gap-3 sm:gap-4 grid-cols-2 md:grid-cols-4">
+          <div className="rounded-[20px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-5">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.24em] text-[#111111]/60">Products</p>
+            <p className="mt-2 sm:mt-3 text-xl sm:text-2xl font-semibold">{products.length}</p>
           </div>
-          <div className="rounded-[28px] border border-black/10 bg-[#F8F8F8] p-5">
-            <p className="text-sm uppercase tracking-[0.24em] text-[#111111]/60">Cart items</p>
-            <p className="mt-3 text-2xl font-semibold">{cart.length}</p>
+          <div className="rounded-[20px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-5">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.24em] text-[#111111]/60">Cart items</p>
+            <p className="mt-2 sm:mt-3 text-xl sm:text-2xl font-semibold">{cart.length}</p>
           </div>
-          <div className="rounded-[28px] border border-black/10 bg-[#F8F8F8] p-5">
-            <p className="text-sm uppercase tracking-[0.24em] text-[#111111]/60">Orders placed</p>
-            <p className="mt-3 text-2xl font-semibold">{orders.length}</p>
+          <div className="rounded-[20px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-5">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.24em] text-[#111111]/60">Orders placed</p>
+            <p className="mt-2 sm:mt-3 text-xl sm:text-2xl font-semibold">{orders.length}</p>
           </div>
-          <div className="rounded-[28px] border border-black/10 bg-[#F8F8F8] p-5">
-            <p className="text-sm uppercase tracking-[0.24em] text-[#111111]/60">Wishlist</p>
-            <p className="mt-3 text-2xl font-semibold">{wishlist.length}</p>
+          <div className="rounded-[20px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-5">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.24em] text-[#111111]/60">Wishlist</p>
+            <p className="mt-2 sm:mt-3 text-xl sm:text-2xl font-semibold">{wishlist.length}</p>
           </div>
         </div>
 
         {/* Wishlist Items Section */}
-        <div className="mt-8 rounded-[28px] border border-black/10 bg-[#F8F8F8] p-6">
+        <div className="mt-6 sm:mt-8 rounded-[24px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-6">
           <div className="flex items-center justify-between">
-            <h3 className="text-xl font-semibold">Your Saved Wishlist ({wishlist.length})</h3>
+            <h3 className="text-lg sm:text-xl font-semibold">Your Saved Wishlist ({wishlist.length})</h3>
           </div>
           {wishlist.length === 0 ? (
-            <p className="mt-4 text-sm text-[#111111]/60">Your wishlist is currently empty. Click the heart icon on any product in the shop to save it here.</p>
+            <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-[#111111]/60">Your wishlist is currently empty. Click the heart icon on any product in the shop to save it here.</p>
           ) : (
-            <div className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            <div className="mt-4 grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
               {wishlist.map((item) => (
-                <div key={item.id} className="flex flex-col justify-between rounded-2xl bg-white p-4 shadow-sm">
-                  <div className="flex items-center gap-4">
+                <div key={item.id} className="flex flex-col justify-between rounded-2xl bg-white p-3.5 sm:p-4 shadow-sm">
+                  <div className="flex items-center gap-3 sm:gap-4">
                     {item.image ? (
-                      <img src={item.image} alt={item.name} className="h-16 w-16 rounded-xl object-cover" />
+                      <img src={item.image} alt={item.name} className="h-14 w-14 sm:h-16 sm:w-16 rounded-xl object-cover shrink-0" />
                     ) : (
-                      <div className="h-16 w-16 rounded-xl bg-black/10 flex items-center justify-center text-xs">No image</div>
+                      <div className="h-14 w-14 sm:h-16 sm:w-16 rounded-xl bg-black/10 flex items-center justify-center text-xs shrink-0">No image</div>
                     )}
-                    <div>
-                      <p className="font-semibold text-[#111111]">{item.name || `Product #${item.productId}`}</p>
-                      <p className="text-sm font-semibold text-[#D4AF37]">₹{Number(item.salePrice || item.price || 0).toLocaleString('en-IN')}</p>
+                    <div className="min-w-0">
+                      <p className="font-semibold text-xs sm:text-sm text-[#111111] truncate">{item.name || `Product #${item.productId}`}</p>
+                      <p className="text-xs sm:text-sm font-semibold text-[#D4AF37]">₹{Number(item.salePrice || item.price || 0).toLocaleString('en-IN')}</p>
                     </div>
                   </div>
-                  <div className="mt-4 flex items-center gap-2">
+                  <div className="mt-3.5 sm:mt-4 flex items-center gap-2">
                     <button
                       onClick={() => handleAddToCartFromWishlist(item)}
-                      className="flex-1 rounded-full bg-[#111111] py-2 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-[#D4AF37] hover:text-[#111111]"
+                      className="flex-1 rounded-full bg-[#111111] py-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-[#D4AF37] hover:text-[#111111]"
                     >
                       + Add to Cart
                     </button>
                     <button
                       onClick={() => handleRemoveWishlist(item.id)}
-                      className="rounded-full border border-red-200 bg-red-50 px-3 py-2 text-xs font-semibold text-red-600 transition hover:bg-red-100"
+                      className="rounded-full border border-red-200 bg-red-50 px-3 py-2 text-[11px] sm:text-xs font-semibold text-red-600 transition hover:bg-red-100"
                     >
                       Remove
                     </button>
@@ -189,49 +189,49 @@ export default function Dashboard({ user, onLogout, onGoHome }) {
 
         {/* Cart Section */}
         {cart.length > 0 ? (
-          <div className="mt-8 rounded-[28px] border border-black/10 bg-[#F8F8F8] p-6">
+          <div className="mt-6 sm:mt-8 rounded-[24px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-6">
             <div className="flex items-center justify-between">
-              <h3 className="text-xl font-semibold">Your cart</h3>
-              <span className="text-sm text-[#111111]/60">{cart.length} item(s)</span>
+              <h3 className="text-lg sm:text-xl font-semibold">Your cart</h3>
+              <span className="text-xs sm:text-sm text-[#111111]/60">{cart.length} item(s)</span>
             </div>
             <div className="mt-4 space-y-3">
               {cart.map((item) => (
-                <div key={item.id} className="flex items-center justify-between rounded-2xl bg-white p-4">
+                <div key={item.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 rounded-2xl bg-white p-3.5 sm:p-4">
                   <div>
-                    <p className="font-semibold">{item.name || `Product #${item.productId}`}</p>
-                    <p className="mt-1 text-sm text-[#111111]/60">Qty: {item.quantity} · ₹{Number(item.salePrice || item.price || 0).toLocaleString('en-IN')}</p>
+                    <p className="font-semibold text-xs sm:text-sm">{item.name || `Product #${item.productId}`}</p>
+                    <p className="mt-0.5 text-xs text-[#111111]/60">Qty: {item.quantity} · ₹{Number(item.salePrice || item.price || 0).toLocaleString('en-IN')}</p>
                   </div>
-                  <p className="font-semibold">₹{(Number(item.salePrice || item.price || 0) * Number(item.quantity || 1)).toLocaleString('en-IN')}</p>
+                  <p className="font-semibold text-xs sm:text-sm">₹{(Number(item.salePrice || item.price || 0) * Number(item.quantity || 1)).toLocaleString('en-IN')}</p>
                 </div>
               ))}
             </div>
             <div className="mt-4 flex items-center justify-between rounded-2xl bg-[#111111] p-4 text-white">
-              <p className="font-semibold">Total</p>
-              <p className="text-lg font-semibold text-[#D4AF37]">
+              <p className="font-semibold text-xs sm:text-sm">Total</p>
+              <p className="text-base sm:text-lg font-semibold text-[#D4AF37]">
                 ₹{cart.reduce((sum, item) => sum + Number(item.salePrice || item.price || 0) * Number(item.quantity || 1), 0).toLocaleString('en-IN')}
               </p>
             </div>
-            <button onClick={checkout} className="mt-4 w-full rounded-full bg-[#D4AF37] py-3 font-semibold text-[#111111] transition hover:-translate-y-0.5">
+            <button onClick={checkout} className="mt-4 w-full rounded-full bg-[#D4AF37] py-3 text-xs sm:text-sm font-semibold text-[#111111] transition hover:-translate-y-0.5">
               Checkout now
             </button>
           </div>
         ) : null}
 
         {/* Orders Section */}
-        <div className="mt-8 rounded-[28px] border border-black/10 bg-[#F8F8F8] p-6">
-          <h3 className="text-xl font-semibold">Your orders</h3>
+        <div className="mt-6 sm:mt-8 rounded-[24px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 sm:p-6">
+          <h3 className="text-lg sm:text-xl font-semibold">Your orders</h3>
           <div className="mt-4 space-y-3">
             {orders.length === 0 ? (
-              <p className="text-sm text-[#111111]/60">No orders yet. Add items to your cart and checkout!</p>
+              <p className="text-xs sm:text-sm text-[#111111]/60">No orders yet. Add items to your cart and checkout!</p>
             ) : null}
             {orders.map((order) => (
-              <div key={order.id} className="rounded-2xl bg-white p-4">
-                <div className="flex items-center justify-between">
-                  <p className="font-semibold">Order #{String(order.id).slice(-6)}</p>
-                  <span className="rounded-full bg-[#D4AF37]/15 px-3 py-1 text-xs font-semibold text-[#D4AF37]">{order.status || 'Pending'}</span>
+              <div key={order.id} className="rounded-2xl bg-white p-3.5 sm:p-4">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="font-semibold text-xs sm:text-sm">Order #{String(order.id).slice(-6)}</p>
+                  <span className="rounded-full bg-[#D4AF37]/15 px-2.5 py-0.5 text-[10px] sm:text-xs font-semibold text-[#D4AF37]">{order.status || 'Pending'}</span>
                 </div>
-                <p className="mt-1 text-sm text-[#111111]/70">{order.items?.length || 0} item(s) · ₹{Number(order.total || 0).toLocaleString('en-IN')}</p>
-                <p className="mt-1 text-xs text-[#111111]/50">{order.createdAt ? new Date(order.createdAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : ''}</p>
+                <p className="mt-1 text-xs sm:text-sm text-[#111111]/70">{order.items?.length || 0} item(s) · ₹{Number(order.total || 0).toLocaleString('en-IN')}</p>
+                <p className="mt-1 text-[10px] sm:text-xs text-[#111111]/50">{order.createdAt ? new Date(order.createdAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : ''}</p>
               </div>
             ))}
           </div>

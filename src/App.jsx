@@ -491,20 +491,20 @@ function App() {
 
           <main>
             {/* Shop By Category Section */}
-            <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <section className="mx-auto max-w-7xl px-4 py-12 sm:py-20 sm:px-6 lg:px-8">
               <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#D4AF37]">Shop by category</p>
-                  <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Collections tailored for every moment.</h2>
+                  <h2 className="mt-2 sm:mt-3 text-2xl sm:text-4xl font-bold">Collections tailored for every moment.</h2>
                 </div>
                 <button
                   onClick={() => handleNavigation('shop', '#shop')}
-                  className="text-xs font-semibold uppercase tracking-[0.3em] text-[#111111] transition hover:text-[#D4AF37]"
+                  className="text-xs font-semibold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#111111] transition hover:text-[#D4AF37] text-left"
                 >
                   Explore all collections →
                 </button>
               </div>
-              <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 {categories.map((category) => (
                   <CategoryCard
                     key={category.id}
@@ -518,12 +518,12 @@ function App() {
             </section>
 
             {/* Main Shop Products Grid */}
-            <section id="shop" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-              <div className="rounded-[40px] border border-black/10 bg-white px-6 py-8 shadow-[0_30px_90px_rgba(0,0,0,0.08)] sm:px-8 sm:py-10">
+            <section id="shop" className="mx-auto max-w-7xl px-4 py-12 sm:py-20 sm:px-6 lg:px-8">
+              <div className="rounded-[28px] sm:rounded-[40px] border border-black/10 bg-white px-4 py-6 sm:px-8 sm:py-10 shadow-[0_30px_90px_rgba(0,0,0,0.08)]">
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#D4AF37]">All Collections</p>
-                    <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Find your perfect frame in one curated edit.</h2>
+                    <h2 className="mt-2 sm:mt-3 text-2xl sm:text-4xl font-bold">Find your perfect frame in one curated edit.</h2>
                   </div>
                   <div className="flex flex-wrap gap-2 sm:gap-3">
                     {shopFilters.map((filter) => (
@@ -531,7 +531,7 @@ function App() {
                         key={filter}
                         type="button"
                         onClick={() => setActiveFilter(filter)}
-                        className={`rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-wider transition ${
+                        className={`rounded-full px-3.5 sm:px-5 py-2 sm:py-2.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition ${
                           activeFilter === filter
                             ? 'bg-[#111111] text-white shadow-lg'
                             : 'border border-black/10 bg-white text-[#111111] hover:border-[#D4AF37] hover:text-[#D4AF37]'
@@ -543,18 +543,18 @@ function App() {
                   </div>
                 </div>
 
-                <div className="mt-6 flex flex-col gap-3 rounded-[28px] border border-black/10 bg-[#F8F8F8] p-4 md:flex-row md:items-center md:justify-between">
+                <div className="mt-6 flex flex-col gap-3 rounded-[24px] sm:rounded-[28px] border border-black/10 bg-[#F8F8F8] p-3.5 sm:p-4 md:flex-row md:items-center md:justify-between">
                   <input
                     ref={searchRef}
                     value={searchTerm}
                     onChange={(event) => setSearchTerm(event.target.value)}
                     placeholder="Search frames, styles, or collections..."
-                    className="w-full rounded-full border border-black/10 bg-white px-5 py-3 text-sm outline-none md:max-w-md focus:border-[#D4AF37]"
+                    className="w-full rounded-full border border-black/10 bg-white px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm outline-none md:max-w-md focus:border-[#D4AF37]"
                   />
                   <select
                     value={priceRange}
                     onChange={(event) => setPriceRange(event.target.value)}
-                    className="rounded-full border border-black/10 bg-white px-5 py-3 text-sm outline-none"
+                    className="w-full md:w-auto rounded-full border border-black/10 bg-white px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-sm outline-none"
                   >
                     <option value="all">All prices</option>
                     <option value="under-1000">Under ₹1,000</option>
@@ -588,7 +588,7 @@ function App() {
                 ) : null}
 
                 {!loading ? (
-                  <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  <div className="mt-8 grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {filteredProducts.map((product) => (
                       <ProductCard
                         key={product.id}
@@ -605,31 +605,31 @@ function App() {
             </section>
 
             {/* EAGLE EYE HIGHLIGHTS & OFFERS Section (Preserved hero2.png) */}
-            <section id="highlights" className="relative overflow-hidden py-24 scroll-mt-20">
+            <section id="highlights" className="relative overflow-hidden py-16 sm:py-24 scroll-mt-20">
               <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/hero2.png')" }} />
               <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
               <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="grid gap-10 rounded-[36px] border border-white/10 bg-white/5 p-6 shadow-[0_30px_120px_rgba(0,0,0,0.3)] backdrop-blur-lg sm:p-10 sm:p-14 lg:grid-cols-[1.1fr_0.9fr]">
+                <div className="grid gap-8 lg:gap-10 rounded-[28px] sm:rounded-[36px] border border-white/10 bg-white/5 p-5 sm:p-10 lg:p-14 text-white shadow-[0_30px_120px_rgba(0,0,0,0.3)] backdrop-blur-lg lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                   <div className="max-w-xl text-white">
-                    <span className="inline-block rounded-full border border-[#D4AF37] bg-[#D4AF37]/20 px-4 py-1 text-xs font-bold uppercase tracking-[0.3em] text-[#D4AF37]">
+                    <span className="inline-block rounded-full border border-[#D4AF37] bg-[#D4AF37]/20 px-3.5 sm:px-4 py-1 text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#D4AF37]">
                       EAGLE EYE HIGHLIGHTS & OFFERS
                     </span>
-                    <h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl text-white">
+                    <h2 className="mt-4 sm:mt-5 text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
                       Elevate every moment with premium eyewear.
                     </h2>
-                    <p className="mt-6 text-base leading-8 text-white/85">
+                    <p className="mt-4 sm:mt-6 text-sm sm:text-base leading-6 sm:leading-8 text-white/85">
                       Discover titanium frames, scratch-resistant precision optics, and exclusive seasonal savings ranging from <strong className="text-[#D4AF37] font-bold">39% to 60% OFF</strong>.
                     </p>
                     <button
                       onClick={() => handleNavigation('shop', '#shop')}
-                      className="mt-10 inline-flex items-center gap-2 rounded-full bg-[#D4AF37] px-8 py-4 text-xs font-bold uppercase tracking-[0.24em] text-[#111111] transition hover:bg-white hover:text-[#111111] shadow-xl"
+                      className="mt-6 sm:mt-10 inline-flex items-center gap-2 rounded-full bg-[#D4AF37] px-6 sm:px-8 py-3.5 sm:py-4 text-xs font-bold uppercase tracking-[0.2em] sm:tracking-[0.24em] text-[#111111] transition hover:bg-white hover:text-[#111111] shadow-xl"
                     >
                       EXPLORE COLLECTION →
                     </button>
                   </div>
 
                   {/* 35% to 60% OFF Deals Cards */}
-                  <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="grid gap-3.5 sm:gap-4 grid-cols-1 sm:grid-cols-2">
                     {[
                       { title: 'Sunglasses', discount: 'Up to 60% OFF' },
                       { title: 'Kids Eyewear', discount: 'Up to 52% OFF' },
@@ -639,15 +639,15 @@ function App() {
                       <div
                         key={deal.title}
                         onClick={() => handleCategoryClick(deal.title)}
-                        className="cursor-pointer flex flex-col justify-between rounded-[24px] border border-white/15 bg-black/60 p-5 text-white backdrop-blur transition hover:border-[#D4AF37] hover:bg-black/80"
+                        className="cursor-pointer flex flex-col justify-between rounded-[20px] sm:rounded-[24px] border border-white/15 bg-black/60 p-4 sm:p-5 text-white backdrop-blur transition hover:border-[#D4AF37] hover:bg-black/80"
                       >
                         <div>
-                          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#D4AF37]">PROMOTIONAL DEAL</span>
-                          <h3 className="mt-1.5 text-base sm:text-lg font-bold text-white tracking-wide">{deal.title}</h3>
+                          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[#D4AF37]">PROMOTIONAL DEAL</span>
+                          <h3 className="mt-1 text-sm sm:text-lg font-bold text-white tracking-wide">{deal.title}</h3>
                         </div>
-                        <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-3">
-                          <span className="text-xs font-semibold uppercase tracking-wider text-white/60">Savings</span>
-                          <span className="text-base sm:text-lg font-extrabold text-[#D4AF37] tracking-tight">{deal.discount}</span>
+                        <div className="mt-3 sm:mt-4 flex items-center justify-between border-t border-white/10 pt-2.5 sm:pt-3">
+                          <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-white/60">Savings</span>
+                          <span className="text-sm sm:text-lg font-extrabold text-[#D4AF37] tracking-tight">{deal.discount}</span>
                         </div>
                       </div>
                     ))}
@@ -657,38 +657,38 @@ function App() {
             </section>
 
             {/* Why Choose Us Section */}
-            <section id="why-choose-us" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+            <section id="why-choose-us" className="mx-auto max-w-7xl px-4 py-12 sm:py-20 sm:px-6 lg:px-8">
               <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#D4AF37]">Why Choose Us</p>
-                  <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Tailored quality, designed for daily wear.</h2>
-                  <div className="mt-8 space-y-6">
+                  <h2 className="mt-2 sm:mt-3 text-2xl sm:text-4xl font-bold">Tailored quality, designed for daily wear.</h2>
+                  <div className="mt-6 sm:mt-8 space-y-5 sm:space-y-6">
                     {whyItems.map((item) => (
-                      <div key={item.title} className="flex gap-4">
-                        <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#111111] text-[#D4AF37]">
-                          <FiCheckCircle size={18} />
+                      <div key={item.title} className="flex gap-3.5 sm:gap-4">
+                        <div className="mt-1 flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-[#111111] text-[#D4AF37]">
+                          <FiCheckCircle className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-[#111111] text-base">{item.title}</h3>
-                          <p className="mt-1 text-sm leading-6 text-[#111111]/70">{item.description}</p>
+                          <h3 className="font-semibold text-[#111111] text-sm sm:text-base">{item.title}</h3>
+                          <p className="mt-1 text-xs sm:text-sm leading-5 sm:leading-6 text-[#111111]/70">{item.description}</p>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="rounded-[36px] border border-black/10 bg-white p-8 shadow-xl">
-                  <h3 className="text-2xl font-bold text-[#111111]">Eagle Eye Excellence Guarantee</h3>
-                  <p className="mt-4 text-sm leading-7 text-[#111111]/70">
+                <div className="rounded-[28px] sm:rounded-[36px] border border-black/10 bg-white p-5 sm:p-8 shadow-xl">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">Eagle Eye Excellence Guarantee</h3>
+                  <p className="mt-3 sm:mt-4 text-xs sm:text-sm leading-6 sm:leading-7 text-[#111111]/70">
                     Every frame undergoes a 12-point inspection before dispatch. Enjoy 30-day effortless returns, scratch protection, and express insured delivery.
                   </p>
-                  <div className="mt-8 grid grid-cols-2 gap-4 border-t border-black/10 pt-6">
+                  <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-4 border-t border-black/10 pt-5 sm:pt-6">
                     <div>
-                      <p className="text-3xl font-extrabold text-[#D4AF37]">100%</p>
-                      <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-[#111111]/60">UV400 Protection</p>
+                      <p className="text-2xl sm:text-3xl font-extrabold text-[#D4AF37]">100%</p>
+                      <p className="mt-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#111111]/60">UV400 Protection</p>
                     </div>
                     <div>
-                      <p className="text-3xl font-extrabold text-[#111111]">30 Days</p>
-                      <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-[#111111]/60">Easy Returns</p>
+                      <p className="text-2xl sm:text-3xl font-extrabold text-[#111111]">30 Days</p>
+                      <p className="mt-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#111111]/60">Easy Returns</p>
                     </div>
                   </div>
                 </div>
@@ -723,16 +723,16 @@ function App() {
 
       {/* Quick View Product Modal */}
       {selectedProduct ? (
-        <div className="fixed inset-0 z-[90] flex items-center justify-center bg-black/60 px-4">
-          <div className="w-full max-w-2xl rounded-[32px] bg-white p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button onClick={() => setSelectedProduct(null)} className="absolute right-4 top-4 rounded-full bg-[#111111]/5 p-2 text-[#111111] hover:bg-[#111111]/10">
+        <div className="fixed inset-0 z-[90] flex items-center justify-center bg-black/60 px-3 sm:px-4">
+          <div className="w-full max-w-2xl rounded-[28px] sm:rounded-[32px] bg-white p-4 sm:p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onClick={() => setSelectedProduct(null)} className="absolute right-3.5 top-3.5 sm:right-4 sm:top-4 rounded-full bg-[#111111]/5 p-2 text-[#111111] hover:bg-[#111111]/10">
               <FiX size={18} />
             </button>
-            <div className="grid gap-6 md:grid-cols-2 items-center">
-              <img src={selectedProduct.image} alt={selectedProduct.name} className="h-52 w-full rounded-2xl object-cover sm:h-72" />
+            <div className="grid gap-5 sm:gap-6 md:grid-cols-2 items-center">
+              <img src={selectedProduct.image} alt={selectedProduct.name} className="h-48 sm:h-72 w-full rounded-2xl object-cover" />
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="rounded-full bg-[#D4AF37]/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">
+                  <span className="rounded-full bg-[#D4AF37]/20 px-3 py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-[#D4AF37]">
                     {selectedProduct.badge || selectedProduct.category}
                   </span>
                   {selectedProduct.rating != null && Number(selectedProduct.reviewCount || 0) > 0 ? (
@@ -741,26 +741,26 @@ function App() {
                     <span className="text-xs text-[#111111]/50 italic">No rating given yet</span>
                   )}
                 </div>
-                <h3 className="mt-3 text-2xl font-bold">{selectedProduct.name}</h3>
-                <p className="mt-2 text-sm text-[#111111]/70">{selectedProduct.description}</p>
+                <h3 className="mt-2.5 sm:mt-3 text-xl sm:text-2xl font-bold">{selectedProduct.name}</h3>
+                <p className="mt-2 text-xs sm:text-sm text-[#111111]/70 leading-5 sm:leading-6">{selectedProduct.description}</p>
                 <div className="mt-4 flex items-baseline gap-3">
-                  <p className="text-3xl font-extrabold text-[#111111]">
+                  <p className="text-2xl sm:text-3xl font-extrabold text-[#111111]">
                     ₹{Number(selectedProduct.salePrice || selectedProduct.price).toLocaleString('en-IN')}
                   </p>
                   {selectedProduct.price > selectedProduct.salePrice ? (
-                    <p className="text-sm text-[#111111]/50 line-through">₹{Number(selectedProduct.price).toLocaleString('en-IN')}</p>
+                    <p className="text-xs sm:text-sm text-[#111111]/50 line-through">₹{Number(selectedProduct.price).toLocaleString('en-IN')}</p>
                   ) : null}
                 </div>
-                <p className="mt-1.5 text-xs text-[#111111]/60 italic font-medium">
+                <p className="mt-1.5 text-[11px] sm:text-xs text-[#111111]/60 italic font-medium leading-tight">
                   * Note: Price of the product may differ based on the power of the lens.
                 </p>
-                <div className="mt-6 flex flex-wrap gap-3">
+                <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row gap-2.5 sm:gap-3">
                   <button
                     onClick={() => {
                       handleAddToCart(selectedProduct)
                       setSelectedProduct(null)
                     }}
-                    className="flex-1 rounded-full bg-[#111111] py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#D4AF37] hover:text-[#111111]"
+                    className="w-full sm:flex-1 rounded-full bg-[#111111] py-3 text-xs font-semibold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-white transition hover:bg-[#D4AF37] hover:text-[#111111]"
                   >
                     Add to Cart
                   </button>
@@ -769,7 +769,7 @@ function App() {
                       handleWishlist(selectedProduct)
                       setSelectedProduct(null)
                     }}
-                    className="rounded-full border border-black/15 bg-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[#111111] transition hover:border-[#D4AF37]"
+                    className="w-full sm:w-auto rounded-full border border-black/15 bg-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[#111111] transition hover:border-[#D4AF37]"
                   >
                     Save
                   </button>

@@ -38,48 +38,48 @@ export default function ContactView() {
   }
 
   return (
-    <div id="contact" className="min-h-screen bg-[#F8F8F8] pb-24 text-[#111111]">
+    <div id="contact" className="min-h-screen bg-[#F8F8F8] pb-16 sm:pb-24 text-[#111111]">
       {/* Header Banner */}
       <div
-        className="relative min-h-[320px] pt-28 pb-16 text-white text-center px-4 overflow-hidden bg-cover bg-center flex flex-col justify-center items-center sm:min-h-[440px] sm:pt-36 sm:pb-28"
+        className="relative min-h-[260px] pt-20 pb-14 text-white text-center px-4 overflow-hidden bg-cover bg-center flex flex-col justify-center items-center sm:min-h-[440px] sm:pt-36 sm:pb-28"
         style={{ backgroundImage: "url('/contact-bg.jpg')" }}
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />
         <div className="relative z-10 mx-auto max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/60 bg-black/60 px-4.5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#D4AF37] backdrop-blur-md shadow-lg">
+          <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-[#D4AF37]/60 bg-black/60 px-3.5 sm:px-4.5 py-1.5 sm:py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#D4AF37] backdrop-blur-md shadow-lg">
             <FiMessageSquare size={14} /> Get In Touch
           </span>
-          <h1 className="mt-5 text-3xl font-extrabold sm:text-5xl lg:text-6xl tracking-tight text-white drop-shadow-lg">CONTACT EAGLE EYE</h1>
-          <p className="mt-5 text-base sm:text-lg leading-8 text-white/95 drop-shadow-md">
+          <h1 className="mt-4 sm:mt-5 text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-lg">CONTACT EAGLE EYE</h1>
+          <p className="mt-3 sm:mt-5 text-sm sm:text-lg leading-6 sm:leading-8 text-white/95 drop-shadow-md">
             Have questions about your prescription power, delivery status, or custom frames? Our team is here to assist you.
           </p>
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12">
-        <div className="grid gap-10 lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12">
+        <div className="grid gap-8 sm:gap-10 lg:grid-cols-2">
           {/* Contact Info Cards */}
           <div className="space-y-6">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#D4AF37]">Customer Care</p>
-              <h2 className="mt-2 text-3xl font-bold">Reach Out Directly</h2>
-              <p className="mt-3 text-sm leading-6 text-[#111111]/70">
+              <h2 className="mt-1.5 sm:mt-2 text-2xl sm:text-3xl font-bold">Reach Out Directly</h2>
+              <p className="mt-2 sm:mt-3 text-xs sm:text-sm leading-6 text-[#111111]/70">
                 Connect with our optical specialists via phone, email, or Instagram.
               </p>
             </div>
 
-            <div className="grid gap-4 grid-cols-1 sm:grid-cols-3">
+            <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-3">
               {/* Phone */}
               <a
                 href="tel:6369412636"
-                className="group rounded-[28px] border border-black/10 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-md flex flex-col justify-between"
+                className="group rounded-[20px] sm:rounded-[28px] border border-black/10 bg-white p-4 sm:p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-md flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#111111] text-[#D4AF37] transition group-hover:bg-[#D4AF37] group-hover:text-[#111111]">
-                    <FiPhone size={20} />
+                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-2xl bg-[#111111] text-[#D4AF37] transition group-hover:bg-[#D4AF37] group-hover:text-[#111111]">
+                    <FiPhone size={18} className="sm:w-5 sm:h-5" />
                   </div>
-                  <h3 className="mt-3 font-bold text-sm text-[#111111]">Phone</h3>
+                  <h3 className="mt-2.5 sm:mt-3 font-bold text-xs sm:text-sm text-[#111111]">Phone</h3>
                   <p className="mt-1 text-xs font-semibold text-[#D4AF37] break-all">6369412636</p>
                 </div>
                 <p className="mt-2 text-[10px] text-[#111111]/50">Mon-Sat 9am-7pm</p>
@@ -88,13 +88,13 @@ export default function ContactView() {
               {/* Email */}
               <a
                 href="mailto:jayeshsubramani008@gmail.com"
-                className="group rounded-[28px] border border-black/10 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-md flex flex-col justify-between"
+                className="group rounded-[20px] sm:rounded-[28px] border border-black/10 bg-white p-4 sm:p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-md flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#111111] text-[#D4AF37] transition group-hover:bg-[#D4AF37] group-hover:text-[#111111]">
-                    <FiMail size={20} />
+                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-2xl bg-[#111111] text-[#D4AF37] transition group-hover:bg-[#D4AF37] group-hover:text-[#111111]">
+                    <FiMail size={18} className="sm:w-5 sm:h-5" />
                   </div>
-                  <h3 className="mt-3 font-bold text-sm text-[#111111]">Email Us</h3>
+                  <h3 className="mt-2.5 sm:mt-3 font-bold text-xs sm:text-sm text-[#111111]">Email Us</h3>
                   <p className="mt-1 text-xs font-semibold text-[#D4AF37] break-all">jayeshsubramani008@gmail.com</p>
                 </div>
                 <p className="mt-2 text-[10px] text-[#111111]/50">24/7 Response</p>
@@ -105,13 +105,13 @@ export default function ContactView() {
                 href="https://www.instagram.com/e____m__02468/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-[28px] border border-black/10 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-md flex flex-col justify-between"
+                className="group rounded-[20px] sm:rounded-[28px] border border-black/10 bg-white p-4 sm:p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#D4AF37] hover:shadow-md flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#111111] text-[#D4AF37] transition group-hover:bg-[#D4AF37] group-hover:text-[#111111]">
-                    <FiInstagram size={20} />
+                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-2xl bg-[#111111] text-[#D4AF37] transition group-hover:bg-[#D4AF37] group-hover:text-[#111111]">
+                    <FiInstagram size={18} className="sm:w-5 sm:h-5" />
                   </div>
-                  <h3 className="mt-3 font-bold text-sm text-[#111111]">Instagram</h3>
+                  <h3 className="mt-2.5 sm:mt-3 font-bold text-xs sm:text-sm text-[#111111]">Instagram</h3>
                   <p className="mt-1 text-xs font-semibold text-[#D4AF37] break-all">@e____m__02468</p>
                 </div>
                 <p className="mt-2 text-[10px] text-[#111111]/50">Follow Us</p>
@@ -119,13 +119,13 @@ export default function ContactView() {
             </div>
 
             {/* FAQs Accordion Box */}
-            <div className="rounded-[32px] border border-black/10 bg-white p-8 shadow-sm">
-              <h3 className="text-xl font-bold text-[#111111]">Frequently Asked Questions</h3>
-              <div className="mt-6 space-y-4">
+            <div className="rounded-[24px] sm:rounded-[32px] border border-black/10 bg-white p-5 sm:p-8 shadow-sm">
+              <h3 className="text-lg sm:text-xl font-bold text-[#111111]">Frequently Asked Questions</h3>
+              <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4">
                 {faqItems.map((item) => (
-                  <div key={item.question} className="rounded-2xl border border-black/5 bg-[#F8F8F8] p-4">
-                    <h4 className="font-semibold text-sm text-[#111111]">{item.question}</h4>
-                    <p className="mt-2 text-xs leading-5 text-[#111111]/70">{item.answer}</p>
+                  <div key={item.question} className="rounded-2xl border border-black/5 bg-[#F8F8F8] p-3.5 sm:p-4">
+                    <h4 className="font-semibold text-xs sm:text-sm text-[#111111]">{item.question}</h4>
+                    <p className="mt-1.5 sm:mt-2 text-xs leading-5 text-[#111111]/70">{item.answer}</p>
                   </div>
                 ))}
               </div>
@@ -133,15 +133,15 @@ export default function ContactView() {
           </div>
 
           {/* Contact Form */}
-          <div className="rounded-[36px] border border-black/10 bg-white p-8 shadow-xl flex flex-col justify-between">
+          <div className="rounded-[24px] sm:rounded-[36px] border border-black/10 bg-white p-5 sm:p-8 shadow-xl flex flex-col justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#D4AF37]">Send Message</p>
-              <h3 className="mt-2 text-2xl font-bold">Write to Our Support Team</h3>
-              <p className="mt-2 text-xs leading-5 text-[#111111]/60">
+              <h3 className="mt-1.5 sm:mt-2 text-xl sm:text-2xl font-bold">Write to Our Support Team</h3>
+              <p className="mt-1.5 sm:mt-2 text-xs leading-5 text-[#111111]/60">
                 Fill out the form below and an optical consultant will get back to you within 24 hours.
               </p>
 
-              <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+              <form onSubmit={handleSubmit} className="mt-5 sm:mt-6 space-y-3.5 sm:space-y-4">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-[#111111]/70 mb-1">Full Name</label>
                   <input
@@ -149,7 +149,7 @@ export default function ContactView() {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="John Doe"
-                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] px-4 py-3.5 text-sm outline-none"
+                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] px-4 py-3 sm:py-3.5 text-xs sm:text-sm outline-none"
                     required
                   />
                 </div>
@@ -161,7 +161,7 @@ export default function ContactView() {
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="john@example.com"
-                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] px-4 py-3.5 text-sm outline-none"
+                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] px-4 py-3 sm:py-3.5 text-xs sm:text-sm outline-none"
                     required
                   />
                 </div>
@@ -173,7 +173,7 @@ export default function ContactView() {
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
                     placeholder="6369412636"
-                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] px-4 py-3.5 text-sm outline-none"
+                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] px-4 py-3 sm:py-3.5 text-xs sm:text-sm outline-none"
                   />
                 </div>
 
@@ -184,13 +184,13 @@ export default function ContactView() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Tell us how we can help with your eyewear selection..."
-                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] p-4 text-sm outline-none resize-none"
+                    className="w-full rounded-2xl border border-black/15 bg-[#F8F8F8] p-3.5 sm:p-4 text-xs sm:text-sm outline-none resize-none"
                     required
                   />
                 </div>
 
                 {statusMsg ? (
-                  <div className="flex items-center gap-2 rounded-2xl bg-emerald-50 border border-emerald-200 p-4 text-xs font-semibold text-emerald-700">
+                  <div className="flex items-center gap-2 rounded-2xl bg-emerald-50 border border-emerald-200 p-3.5 sm:p-4 text-xs font-semibold text-emerald-700">
                     <FiCheckCircle size={16} /> {statusMsg}
                   </div>
                 ) : null}
@@ -202,7 +202,7 @@ export default function ContactView() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full rounded-full bg-[#111111] py-4 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#D4AF37] hover:text-[#111111] shadow-lg flex items-center justify-center gap-2"
+                  className="w-full rounded-full bg-[#111111] py-3.5 sm:py-4 text-xs font-semibold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-white transition hover:bg-[#D4AF37] hover:text-[#111111] shadow-lg flex items-center justify-center gap-2"
                 >
                   <FiSend size={14} /> {loading ? 'Sending Message...' : 'Send Message'}
                 </button>
